@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+import axios from 'axios';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
@@ -7,6 +9,12 @@ import { Provider } from "react-redux";
 import store from './reducer/Store.js'
 import './index.css';
 import App from './App';
+
+dotenv.config();
+
+console.log(process.env)
+axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:8010/proxy/";
+axios.defaults.headers = { Authorization: `Bearer ${process.env.REACT_APP_API_KEY}` }
 
 ReactDOM.render(
   <React.StrictMode>

@@ -7,6 +7,9 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
+    "concurrently": "^6.2.0",
+    "dotenv": "^10.0.0",
+    "local-cors-proxy": "^1.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
@@ -20,6 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "dev": "concurrently \"lcp --proxyUrl https://api.yelp.com/v3/businesses/\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
