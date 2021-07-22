@@ -7,11 +7,14 @@ export const getLocationData = (location) => {
         `search?location=${location}&categories=parking`, 
         {responseType: 'json'}
       )
-      console.log(res.data)
       dispatch({type: 'GET_LOCATION_DATA', payload: {location, data: res.data}})
     }
     catch(err) {
       console.log((err.response && err.response.data) || err)
     }
   }
+}
+
+export const sortBusinesses = (order) => {
+  return {type: 'SORT_BUSINESSES', payload: order}
 }
