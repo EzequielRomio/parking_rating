@@ -1,5 +1,6 @@
 import {
   filterImportantData,
+  sortByScore
 } from './utils.js';
 
 const initialState = {
@@ -13,7 +14,7 @@ const rootReducer = (state=initialState, action) => {
         ...state, locations: [
           ...state.locations, {
             location: action.payload.location, 
-            data: filterImportantData(action.payload.data)
+            businesses: sortByScore(filterImportantData(action.payload.data), 'asc') 
           }
         ]
       }

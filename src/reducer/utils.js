@@ -1,8 +1,4 @@
 export const filterImportantData = (data) => {
-  /*
-    important data:
-      address, image, star rating, review count, link to yelp page
-  */
   return data.businesses.map(business => {
     return {
       id: business.id,
@@ -13,7 +9,13 @@ export const filterImportantData = (data) => {
       imageUrl: business.image_url,
       rating: business.rating,
       reviewCount: business.review_count,
-      yelpLink: business.url 
+      yelpLink: business.url,
+      score: (business.review_count * business.rating) / (business.review_count + 1) 
     }
   })
+}
+
+export const sortByScore = (businesses, order) => {
+  if (order === 'asc') return businesses.sort((a, b) => a.score - b.score);
+  if (order === 'desc') return businesses.sort((a, b) => b.score - a.score);
 }
