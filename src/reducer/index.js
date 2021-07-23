@@ -5,6 +5,7 @@ import {
 
 const initialState = {
   businesses: [],
+  requestError: null
 };
 
 const rootReducer = (state=initialState, action) => {
@@ -19,6 +20,17 @@ const rootReducer = (state=initialState, action) => {
         ...state, 
         businesses: sortByScore(state.businesses, action.payload)
       }
+    case 'HANDLE_ERROR':
+      return {
+        ...state,
+        requestError: true
+      }
+    case 'RESET_ERROR':
+      return {
+        ...state,
+        requestError: null
+      }
+    
     default:
       return state;
   }
