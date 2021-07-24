@@ -170,6 +170,26 @@ p, li {
   font-size: 24px;
 }
 
+.carousel-slide {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+.text-align {
+  text-align: center;
+}
+
+.no-photo {
+  /* style={{position: 'absolute', top: '25%', left: '25%', fontSize: '48px', transform: 'rotate(-20deg)'}} */
+  position: absolute;
+  top: 45%;
+  left: 23%;
+  font-size: 60px;
+  transform: rotate(-10deg);
+  text-shadow: 0px 0px 5px red;
+}
+
 @media (max-width: 1440px) {
   .form {
     position: unset;

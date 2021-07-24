@@ -6,8 +6,8 @@ const Businesses = ({businesses}) => {
     <div>
       {businesses.map(business => {
         return (
-          <span className={'d-flex-align-center margins'}>
-            <Link to={`/details/${business.id}`} key={business.id}>
+          <span className={'d-flex-align-center margins'} key={business.id}>
+            <Link to={`/details/${business.id}`}>
               <BusinessCard 
                 id={business.id}
                 name={business.name}
