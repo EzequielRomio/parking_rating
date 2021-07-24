@@ -16,7 +16,7 @@ import App from './App';
 
 dotenv.config();
 
-axios.defaults.baseURL = process.env.REACT_APP_API || 'http://localhost:8010/proxy/';
+axios.defaults.baseURL = process.env.REACT_APP_API_PRODUCTION_URL || 'http://localhost:8010/proxy/';
 axios.defaults.headers = { Authorization: `Bearer ${process.env.REACT_APP_API_KEY}` }
 
 ReactDOM.render(
